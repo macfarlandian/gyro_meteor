@@ -7,8 +7,11 @@ if (Meteor.isClient){
 
             FoodItems.insert({
                 name: name,
-                shelflife: shelflife
+                shelflife: shelflife,
+                user_id: Meteor.userId()
             });
+
+            tmpl.find('form').reset();
             
         }
     });
