@@ -1,9 +1,100 @@
 <template name="FoodList">
-food list
-<div class="FoodList">
-    {{# each food_items }}
-        {{> FoodItem }}
-    {{/ each}}
+<div data-role="page" >
+	<div data-role="header" data-position="fixed">
+	    <img src="img/gyro-logo-light.png" style="height: 43px; width: 146px; display:block; margin: 0 auto;"/>
+		<!-- <h1></h1> -->
+	</div>
+	<div data-role="collapsible" data-mini="true" data-inset="false" style="margin: 0 15px;">
+		<h3>Filters</h3>
+		<div data-role="navbar" style="margin-bottom: 10px;">
+			<ul>
+				<li>
+					<a href="" class="ui-btn-active" onClick="filterTimers('all'); return false;">All</a>
+				</li>
+				<li>
+					<a href="" onClick="filterTimers('soon'); return false;">This Week</a>
+				</li>
+				<li>
+					<a href=""  onClick="filterTimers('month'); return false;">Month</a>
+				</li>
+				<li>
+					<a href=""  onClick="filterTimers('later'); return false;">Later</a>
+				</li>
+				<li>
+					<a href=""  onClick="filterTimers('activeTimer'); return false;">Active</a>
+				</li>
+				<li>
+					<a href=""  onClick="filterTimers('expired'); return false;">Expired</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div data-role="content" style="text-align:center;">
+
+		<div id="pantry">
+
+		    <div class="portfolioContainer" id="pantryList">
+		    	<!-- filled in via ajax -->
+                <div class="FoodList">
+                    {{# each food_items }}
+                        {{> FoodItem }}
+                    {{/ each}}
+                </div>
+		    </div>
+		</div>
+
+	</div>
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+		<a id="addnewbutton" data-role="button" data-icon="plus"
+			href="#">New timer</a>
+	</div>
 </div>
+
+<div data-role="page" id="editview">
+	<div data-role="header">
+	    <h1>Edit timer</h1>
+	</div>
+	<div data-role="content">
+		<div class="chart" data-percent="98">
+			<div class="label">
+				<div class="num" id="itemTime">7</div>
+				<div class="timescale" id="itemScale">days</div>
+			</div>
+		</div>
+		<label for="slider-1">adjust the time:</label>
+		<input type="range" name="slider-1" id="slider-1" value="98"
+			min="0" max="100" data-highlight="true"/>
+
+		<div data-role="popup" id="popupDelete">
+			<p><strong>Are you sure you want to delete this Timer?</strong></p>
+			<a data-role="button" data-icon="delete" data-theme="e" id="popupDeleteButton">Yes, delete it</a>
+			<a data-role="button" data-icon="back" id="popupCancelButton">Cancel</a>
+		</div>
+
+		<fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+		  <legend>set timescale:</legend>
+			  <input type="radio" name="timescale" id="radio-choice-1" value="week" checked="checked" />
+			  <label for="radio-choice-1">week</label>
+
+			  <input type="radio" name="timescale" id="radio-choice-2" value="month" />
+			  <label for="radio-choice-2">month</label>
+
+			  <input type="radio" name="timescale" id="radio-choice-3" value="year" />
+			  <label for="radio-choice-3">year</label>
+		</fieldset>
+
+
+	    <label for="basic">Item:</label>
+	    <input type="text" name="name" id="itemName" value="" placeholder="Item name..." />
+		<input type="hidden" id="itemId" value="0">
+
+	    <a data-role="button" id="saveButton" data-icon="check">Save</a>
+	    <a data-role="button" data-icon="delete" data-theme="e" id="deleteButton" href="#popupDelete" data-rel="popup">Delete</a>
+		<a data-role="button" data-icon="refresh" data-theme="e" id="resetButton">Reset</a>
+
+
+	</div>
+</div>
+
 {{> EditFoodItem }}
 </template>
