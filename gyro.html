@@ -1,8 +1,134 @@
 <head>
-  <title>gyro</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+	<!-- iphone webapp configuration stuff -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="apple-touch-icon-precomposed" href="img/icon.png"/>
+	<link rel="img/splash.png" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="translucent-black" />
+
+	<title>GYRO</title>
+	<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" /> -->
+    <link rel="stylesheet" href="flat-ui/jquery.mobile.flatui.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+	<script src="jquery.isotope.js"></script>
+	<script src="jquery.easypiechart.js"></script>
+    <script src="script.js"></script>
+
+	<style type="text/css" media="screen">
+
+		.thing {
+			width: 85%;
+			margin: 10px auto;
+		}
+		.chart {
+			width: 250px;
+			margin: 0 auto;
+			position: relative;
+		}
+
+		.chart .label {
+			position: absolute;
+			height: 130px;
+			top: 50%;
+			margin-top: -65px; /* half whatever the chart size is */
+			width: 100%;
+			text-align: center;
+		}
+		.chart .label .num {
+			font-size: 100px;
+			margin-bottom: -10px;
+		}
+		.chart .label .timescale {
+			font-size: 14px;
+		}
+
+		.staticchart {
+			width: 110px;
+			margin: 0 auto;
+			position:relative;
+			height: 110px;
+		}
+
+		.staticchart
+		{
+			border-radius:55px;
+			box-shadow: 2px 3px 10px #696969;
+			-moz-box-shadow: 2px 3px 10px #696969;
+			-webkit-box-shadow: 2px 3px 10px #696969;
+
+		}
+
+		.staticchart:hover
+		{
+			cursor: pointer;
+		}
+
+		.staticchart .label {
+			position: absolute;
+			top: 50%;
+			margin-top: -33px;
+			width:100%;
+			text-align:center;
+		}
+
+		.staticchart .label .num {
+			font-size: 45px;
+			margin-bottom: -7px;
+		}
+		.staticchart .label .timescale {
+			font-size: 12px;
+		}
+
+		div.itemname {
+			text-align: center;
+			font-weight: bold;
+			margin-top: 5px;
+			font-size: 16px;
+			margin-bottom: 15px;
+			min-height: 40px;
+		}
+
+		.portfolioContainer
+		{
+			padding-top:5px;
+			/*min-height:500px;*/
+			/*padding:15px;	*/
+		}
+		.isotope-item {
+			width: 145px;
+		}
+
+		#saveButton {
+			width: 100%;
+		}
+
+		#deleteButton, #resetButton {
+			width: 45%;
+			display: block;
+			float:left;
+			margin: 0 5px;
+		}
+
+		#popupDelete
+		{
+			background-color: "#CCC";
+			top:-200px;
+			width:95%;
+			vertical-align: middle;
+			text-align: center;
+		}
+
+		#popupDeleteButton, #popupCancelButton
+		{
+			width:280px;
+		}
+
+	</style>
 </head>
 
 <body>
-hello<br>
   {{> FoodList}}
 </body>
