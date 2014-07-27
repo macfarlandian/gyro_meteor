@@ -4,3 +4,5 @@
 *.lock
 
 smart.json
+
+packages
