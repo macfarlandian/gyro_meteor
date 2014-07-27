@@ -1,7 +1,36 @@
 if (Meteor.isClient){
     Template.FoodList.food_items = function(){
-        return FoodItems.find({}, {sort: ["enddate"]});
+        return FoodItems.find({status:"active"}, {sort: ["enddate"]});
     }
+
+    Template.FoodItem.events({
+        'click': function(e, tmpl){
+            var id = tmpl.data._id;
+            var itemname = tmpl.data.name;
+            var shelflife = tmpl.data.shelflife;
+            var timescale = tmpl.data.timescale;
+            var enddate = tmpl.data.enddate + (parseInt(shelflife)*1000*60*60*24);
+
+            // save to db
+            FoodItems.insert({
+                name: itemname,
+                user_id: Meteor.userId(),
+                startdate: Date.now(),
+                shelflife: shelflife,
+                enddate: enddate,
+                status: "active",
+                timescale: "week"
+            }, function (e){
+                if (!e){
+                    FoodItems.update({_id: id},
+                        {$set: {
+                                   status:"inactive"
+                               }
+                        });
+                }
+            });
+        }
+    });
 
     Template.FoodItem.values = function(){
 
@@ -17,7 +46,7 @@ if (Meteor.isClient){
             }
 
             // convert from ms to days
-            daysleft = daysleft / 1000 / 60 / 60 / 24;
+            daysleft = Math.round(daysleft / 1000 / 60 / 60 / 24);
             var scalefactor = 14.0;
         } else {
             // TODO: month, year etc
@@ -194,7 +223,7 @@ if (Meteor.isClient){
                 name: itemname,
                 user_id: Meteor.userId(),
                 startdate: Date.now(),
-                shelflife: +shelflife,
+                shelflife: shelflife,
                 enddate: enddate.getTime(),
                 status: "active",
                 timescale: "week"
