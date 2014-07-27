@@ -65,7 +65,7 @@ if (Meteor.isClient){
             return weekcolor;
         } else {
             return fivedaycolor;
-        }    
+        }
     };
 
     var staticoptions = {
@@ -202,6 +202,10 @@ if (Meteor.isClient){
 
             // return to list
             Router.go('FoodList');
+        },
+        'click .btn.cancel': function(e){
+            e.preventDefault();
+            Router.go("FoodList");
         }
     });
 }
