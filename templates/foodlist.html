@@ -1,26 +1,80 @@
 <template name="FoodList">
-<div class="navbar navbar-default navbar-fixed-top">
+{{>topBar}}
+<div class="navbar navbar-default navbar-fixed-bottom addnew">
 	<div class="container">
-		<img class="logo" src="img/gyro-logo-light.png"/>
+		<a href="/new">Add new timer</a>
 	</div>
-</div>
-<div class="navbar navbar-default navbar-fixed-bottom">
-	<a href="#">Add new timer</a>
+
 </div>
 
 <div class="container">
 
 {{# each food_items }}
-	<div class="col-xs-6 {{ classes }}" id="{{ _id }}" data-timerid="{{ _id }}">
+	{{>FoodItem}}
+{{/ each}}
+
+</div>
+</template>
+
+<template name="FoodItem">
+	<div class="col-xs-6" id="{{ _id }}" data-timerid="{{ _id }}">
 		<div class="staticchart" data-percent="{{ values.percentage }}">
-			<div class="label">
+			<div class="chartlabel">
 				<div class="num">{{ values.remaining }}</div>
 				<div class="timescale">{{ values.timeunits }}</div>
 			</div>
 		</div>
 		<div class="itemname">{{ name }}</div>
 	</div>
-{{/ each}}
+</template>
+
+<template name="topBar">
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<img class="logo" src="img/gyro-logo-light.png"/>
+	</div>
+</div>
+</template>
+
+<template name="CreateTimer">
+<!-- title bar -->
+<div class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<button class="btn btn-default navbar-btn navbar-left">&larr; back</button>
+		<div class="titlebar-text h3">new timer</div>
+	</div>
+</div>
+
+<!-- control bar -->
+<div class="navbar navbar-default navbar-fixed-bottom">
+	<div class="container">
+		<button class="btn btn-default btn-lg col-xs-6 navbar-btn">cancel</button>
+		<button class="btn btn-primary btn-lg col-xs-6 navbar-btn">save</button>
+	</div>
+</div>
+
+<!-- body -->
+<div class="container newtimer">
+	<div class="row">
+		<div class="col-xs-12">
+			capture your food
+		</div>
+	</div>
+	<div class="row daycount text-center">Use in <span class="num"></span> days</div>
+	<div class="row days"></div>
+	<div class="row dates"></div>
+	<div class="row month text-center"></div>
+	<div class="row reminders">
+		<div class="col-xs-3">
+			Reminders:
+		</div>
+		<div class="col-xs-9 text-right">
+			None
+		</div>
+	</div>
+</div>
+
+<div class="container">
 
 </div>
 </template>

@@ -2,6 +2,7 @@ if (Meteor.isClient){
     Router.map( function() {
         this.route('LoginPage', {path: '/login'});
         this.route('FoodList', {path: '/'});
+        this.route('CreateTimer', {path: '/new'});
     });
     Router.configure({
         onBeforeAction: function(pause){

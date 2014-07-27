@@ -16,16 +16,28 @@ body {
 }
 
 .navbar {
-    .logo {
-        width: 146px;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-    }
-    &.navbar-fixed-bottom {
+    &.addnew {
         min-height: 0;
         height: 25px;
     }
+    .container {
+        position: relative;
+        .logo {
+            width: 146px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .titlebar-text {
+            position:absolute;
+            text-align: center;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+
 }
 
 .logoholder {
@@ -47,30 +59,58 @@ body {
     }
 }
 
+.newtimer {
+    font-size: 20px;
+    .row {
+        padding: 10px;
+    }
+    .reminders {
+        background-color: #5ed1ec;
+    }
+    .days, .dates {
+        overflow-x: auto;
+        white-space: nowrap;
+        .col-xs-1 {
+            text-align: center;
+            display: inline-block;
+            float: none; /* Very important */
+            &:last-child {
+                margin-right: 200px;
+            }
+        }
+        .active {
+            color: red;
+        }
+    }
+}
+
 .thing {
     width: 85%;
     margin: 10px auto;
 }
+
 .chart {
     width: 250px;
     margin: 0 auto;
     position: relative;
-}
 
-.chart .label {
-    position: absolute;
-    height: 130px;
-    top: 50%;
-    margin-top: -65px; /* half whatever the chart size is */
-    width: 100%;
-    text-align: center;
-}
-.chart .label .num {
-    font-size: 100px;
-    margin-bottom: -10px;
-}
-.chart .label .timescale {
-    font-size: 14px;
+    .chartlabel {
+        position: absolute;
+        height: 130px;
+        top: 50%;
+        margin-top: -65px; /* half whatever the chart size is */
+        width: 100%;
+        text-align: center;
+
+        .num {
+            font-size: 100px;
+            margin-bottom: -10px;
+        }
+
+        .timescale {
+            font-size: 14px;
+        }
+    }
 }
 
 .staticchart {
@@ -78,36 +118,32 @@ body {
     margin: 0 auto;
     position:relative;
     height: 110px;
-}
 
-.staticchart
-{
     border-radius:55px;
     box-shadow: 2px 3px 10px #696969;
     -moz-box-shadow: 2px 3px 10px #696969;
     -webkit-box-shadow: 2px 3px 10px #696969;
 
-}
+    &:hover {
+        cursor: pointer;
+    }
 
-.staticchart:hover
-{
-    cursor: pointer;
-}
+    .chartlabel {
+        position: absolute;
+        top: 50%;
+        margin-top: -42px;
+        width:100%;
+        text-align:center;
 
-.staticchart .label {
-    position: absolute;
-    top: 50%;
-    margin-top: -33px;
-    width:100%;
-    text-align:center;
-}
+        .num {
+            font-size: 45px;
+            margin-bottom: -7px;
+        }
 
-.staticchart .label .num {
-    font-size: 45px;
-    margin-bottom: -7px;
-}
-.staticchart .label .timescale {
-    font-size: 12px;
+        .timescale {
+            font-size: 12px;
+        }
+    }
 }
 
 div.itemname {
@@ -119,16 +155,6 @@ div.itemname {
     min-height: 40px;
 }
 
-.portfolioContainer
-{
-    padding-top:5px;
-    /*min-height:500px;*/
-    /*padding:15px;	*/
-}
-.isotope-item {
-    width: 145px;
-    float:left;
-}
 
 #saveButton {
     width: 100%;
