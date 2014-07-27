@@ -67,6 +67,9 @@
                                     </text>
                                 </g>
                             </g>
+                            <text id="Track-food,-forget-w" sketch:type="MSTextLayer" font-family="Futura" font-size="48" font-weight="420" fill="#4A4A4A">
+                                <tspan x="54" y="581">Track food, forget waste</tspan>
+                            </text>
                             <path d="M0.5,274.5 L638.5,274.5" id="Line-4" stroke="#4A4A4A" stroke-width="3" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
                         </g>
                         <g id="Status-Bar-White" transform="translate(14.000000, 14.000000)" sketch:type="MSShapeGroup">

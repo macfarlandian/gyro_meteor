@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="640px" height="1140px" viewBox="0 0 640 1140" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.4 (8054) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard 5gyro</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard-5" sketch:type="MSArtboardGroup">
+            <g id="iPhone-5S-(black)-5" sketch:type="MSLayerGroup" transform="translate(14.000000, 4.000000)">
+                <g id="Screens">
+                    <g id="Lock-Screen">
+                        <g id="Not-linen" transform="translate(88.000000, 0.000000)">
+                            <text id="VIRGIN" fill="#4A4A4A" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="28" font-weight="normal">
+                                <tspan x="0" y="27" fill="#FFFFFF">VIRGIN</tspan>
+                            </text>
+                            <path d="M122.489025,10.0556712 C127.500104,10.0556712 132.067017,11.9612055 135.568703,15.0858082 L138,12.3149589 C133.852722,8.59857534 128.436211,6 122.489025,6 C116.550877,6 111.142113,8.59068493 107,12.2952329 L109.426132,15.0700274 C112.925236,11.9546301 117.484402,10.0556712 122.489025,10.0556712 Z M122.489025,18.0539178 C125.492315,18.0539178 128.236078,19.1796164 130.352326,21.033863 L132.924362,18.1012603 C130.125078,15.6210411 126.483944,14.0008767 122.489025,14.0008767 C118.501853,14.0008767 114.863301,15.6170959 112.0666,18.0894247 L114.634762,21.0259726 C116.749719,19.1756712 119.489608,18.0539178 122.489025,18.0539178 Z M127.779,23.9664658 C126.347078,22.7395068 124.50327,21.8899726 122.487734,21.8899726 C120.476071,21.8899726 118.634845,22.7381918 117.202924,23.9598904 L122.487734,30 L127.779,23.9664658 L127.779,23.9664658 Z" id="Wifi" fill="#4A4A4A" sketch:type="MSShapeGroup"></path>
+                            <text id="82%" fill="#4A4A4A" sketch:type="MSTextLayer" font-family="Helvetica Neue" font-size="28" font-weight="260">
+                                <tspan x="387" y="27" fill="#FFFFFF">82%</tspan>
+                            </text>
+                            <rect id="Battery" stroke="#4A4A4A" sketch:type="MSShapeGroup" x="452" y="7" width="54" height="22" rx="3"></rect>
+                            <rect id="Charge" fill="#4A4A4A" sketch:type="MSShapeGroup" x="454" y="9" width="41" height="18" rx="2"></rect>
+                            <path d="M365.379104,26.5379916 L365.379104,19.1596312 L369.005545,23.0257721 L365.379104,26.5379916 L365.379104,26.5379916 L365.379104,26.5379916 L365.379104,26.5379916 Z M369.172014,11.9762275 L365.379104,15.7113975 L365.379104,8.63497001 L369.172014,11.9762275 L369.172014,11.9762275 L369.172014,11.9762275 L369.172014,11.9762275 Z M366.2902,17.5009998 L371.918261,11.9762275 L363.521027,4 L363.322659,4 L363.322659,15.0935348 L357.622827,9.2438347 L356,10.9034659 L362.85814,17.5009998 L356,24.0975339 L357.622827,25.7571651 L363.322659,19.907465 L363.322659,31 L363.685502,31 L372,23.0037769 L366.2902,17.5009998 L366.2902,17.5009998 Z" id="bluetooth" opacity="0.45" fill="#4A4A4A" sketch:type="MSShapeGroup"></path>
+                        </g>
+                        <g id="Status-Bar-White" transform="translate(0.000000, 7.000000)" sketch:type="MSShapeGroup">
+                            <g id="Signal-&amp;-Carrier" transform="translate(0.000000, 4.000000)">
+                                <circle id="Oval-1" fill="#4A4A4A" cx="7" cy="7" r="7"></circle>
+                                <circle id="Oval-1-copy" fill="#4A4A4A" cx="24" cy="7" r="7"></circle>
+                                <circle id="Oval-1-copy-2" fill="#4A4A4A" cx="41" cy="7" r="7"></circle>
+                                <circle id="Oval-1-copy-3" stroke="#4A4A4A" cx="58" cy="7" r="7"></circle>
+                                <circle id="Oval-1-copy-4" stroke="#4A4A4A" cx="75" cy="7" r="7"></circle>
+                            </g>
+                            <path d="M598,11 C598,13.5446801 596.696145,15.6498642 595,16 L595,6 C596.696145,6.35013578 598,8.45531985 598,11 Z" id="+" fill="#FFFFFF"></path>
+                            <path d="M613,0 L604,12 L609,12 L606,21 L616,9 L611,9 L613,0" id="power" fill="#4A4A4A"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <text id="New-Tracker" sketch:type="MSTextLayer" font-family="Futura" font-size="34" font-weight="420" fill="#4A4A4A">
+                <tspan x="221" y="97">New Tracker</tspan>
+            </text>
+            <text id="Back" sketch:type="MSTextLayer" font-family="Futura" font-size="34" font-weight="420" fill="#4A4A4A">
+                <tspan x="31" y="97">Back</tspan>
+            </text>
+            <rect id="Rectangle-34" stroke="#979797" sketch:type="MSShapeGroup" x="-22" y="45" width="680" height="79"></rect>
+            <g id="Group-2" sketch:type="MSLayerGroup" transform="translate(122.000000, 156.000000)">
+                <path d="M196.767803,393.913221 C305.543935,393.913221 393.724413,305.732743 393.724413,196.956611 C393.724413,88.1804782 305.543935,0 196.767803,0 C87.9916702,0 -0.188808087,88.1804782 -0.188808087,196.956611 C-0.188808087,305.732743 87.9916702,393.913221 196.767803,393.913221 Z" id="Oval-39" stroke="#979797" stroke-width="10" fill="#D8D8D8" sketch:type="MSShapeGroup"></path>
+                <path d="M84.3056769,40.4323144 L84.3056769,249.906114" id="Line" stroke="#FFFFFF" stroke-width="10" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path d="M3.44104803,216.786026 L188.39738,324.318777" id="Line" stroke="#FFFFFF" stroke-width="10" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path d="M113.554585,373.353712 L298.510917,266.681223" id="Line" stroke="#FFFFFF" stroke-width="10" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path d="M307.113537,136.351528 L307.113537,357.008734" id="Line" stroke="#FFFFFF" stroke-width="10" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path d="M196.569869,68.3908297 L391.419214,180.655022" id="Line" stroke="#FFFFFF" stroke-width="10" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path d="M91.1877729,127.318777 L275.283843,17.2052402" id="Line" stroke="#FFFFFF" stroke-width="10" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <polygon id="Polygon-1" stroke="#FFFFFF" stroke-width="10" fill="#FFFFFF" sketch:type="MSShapeGroup" points="196.139738 67.9606987 307.891051 132.480349 307.891051 261.519651 196.139738 326.039301 84.388425 261.519651 84.388425 132.480349 "></polygon>
+                <circle id="Oval-41" stroke="#FFFFFF" stroke-width="11" sketch:type="MSShapeGroup" cx="197" cy="197" r="197"></circle>
+            </g>
+            <text id="Capture-" sketch:type="MSTextLayer" font-family="Futura (Light)" font-size="34" font-weight="normal" sketch:alignment="middle" fill="#4A4A4A">
+                <tspan x="264.421875" y="317">Capture </tspan>
+                <tspan x="291.129639" y="361">your</tspan>
+                <tspan x="283.355957" y="405">food!</tspan>
+            </text>
+            <g id="camera" sketch:type="MSLayerGroup" transform="translate(549.000000, 533.000000)" fill="#9B9B9B">
+                <path d="M5.87096774,1.60869565 L10.9032258,1.60869565 L10.9032258,4.02173913 L5.87096774,4.02173913 L5.87096774,1.60869565 L5.87096774,1.60869565 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+                <path d="M26,12.0652174 C31.0951613,12.0652174 35.2258065,16.0266304 35.2258065,20.9130435 C35.2258065,25.7994565 31.0951613,29.7608696 26,29.7608696 C20.9048387,29.7608696 16.7741935,25.7994565 16.7741935,20.9130435 C16.7741935,16.0266304 20.9048387,12.0652174 26,12.0652174 L26,12.0652174 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+                <path d="M48.6451613,5.63043478 L40.2580645,5.63043478 C40.2580645,5.63043478 37.8417419,5.68513043 35.8372258,1.82104348 C34.7947097,-0.188217391 31.8634194,5.16850451e-13 31.8634194,5.16850451e-13 L20.1290323,5.16850451e-13 C20.1290323,5.16850451e-13 17.5432903,-0.402173913 16.2541935,1.79691304 C13.9854839,5.66743478 13.1073548,5.52345652 11.7419355,5.63043478 L3.35483871,5.63043478 C1.50212903,5.63043478 0,7.07102174 0,8.84782609 L0,33.7826087 C0,35.559413 1.50212903,37 3.35483871,37 L48.6451613,37 C50.497871,37 52,35.559413 52,33.7826087 L52,8.84782609 C52,7.07102174 50.497871,5.63043478 48.6451613,5.63043478 L48.6451613,5.63043478 Z M26,32.173913 C19.5150968,32.173913 14.2580645,27.1322609 14.2580645,20.9130435 C14.2580645,14.6946304 19.5150968,9.65217391 26,9.65217391 C32.4849032,9.65217391 37.7419355,14.6946304 37.7419355,20.9130435 C37.7419355,27.1322609 32.4849032,32.173913 26,32.173913 L26,32.173913 Z M40.6774194,12.0652174 C39.9829677,12.0652174 39.4193548,11.5255 39.4193548,10.8586957 C39.4193548,10.1926957 39.9829677,9.65217391 40.6774194,9.65217391 C41.371871,9.65217391 41.9354839,10.1926957 41.9354839,10.8586957 C41.9354839,11.5255 41.371871,12.0652174 40.6774194,12.0652174 L40.6774194,12.0652174 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+            </g>
+            <rect id="Rectangle-35" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="1047" width="321" height="86"></rect>
+            <rect id="Rectangle-36" fill="#66E5D3" sketch:type="MSShapeGroup" x="321" y="1047" width="331" height="86"></rect>
+            <text id="Save" sketch:type="MSTextLayer" font-family="Futura" font-size="34" font-weight="420" fill="#4A4A4A">
+                <tspan x="449" y="1103">Save</tspan>
+            </text>
+            <path d="M-0.5,596.5 L641.5,596.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <rect id="Rectangle-38" fill-opacity="0.480921649" fill="#D8D8D8" sketch:type="MSShapeGroup" x="-1" y="676" width="640" height="174"></rect>
+            <text id="11---12---13---14---" sketch:type="MSTextLayer" font-family="Futura (Light)" font-size="34" font-weight="normal" fill="#4A4A4A">
+                <tspan x="72" y="802">11   12   13   </tspan>
+                <tspan x="293.381836" y="802" font-family="Futura" font-size="48" font-weight="420">14</tspan>
+                <tspan x="348.834961" y="802">    15   16   17</tspan>
+            </text>
+            <text id="S-----M-----T-----W-" sketch:type="MSTextLayer" font-family="Futura (Light)" font-size="34" font-weight="normal" sketch:alignment="middle" fill="#4A4A4A">
+                <tspan x="79.826416" y="728">S     M     T     </tspan>
+                <tspan x="302.24585" y="728" font-family="Futura" font-size="48" font-weight="420">W</tspan>
+                <tspan x="353.1521" y="728">     T     F     S</tspan>
+            </text>
+            <rect id="Rectangle-37" fill="#8BECDE" sketch:type="MSShapeGroup" x="0" y="590" width="640" height="88"></rect>
+            <rect id="Rectangle-39" fill="#8BECDE" sketch:type="MSShapeGroup" x="1" y="849" width="640" height="88"></rect>
+            <rect id="Rectangle-40" fill="#5ED1EC" sketch:type="MSShapeGroup" x="1" y="949" width="640" height="88"></rect>
+            <text id="Reminders" sketch:type="MSTextLayer" font-family="Futura" font-size="34" font-weight="420" fill="#4A4A4A">
+                <tspan x="33" y="1006">Reminders</tspan>
+            </text>
+            <text id="None" sketch:type="MSTextLayer" font-family="Futura" font-size="34" font-weight="420" fill="#4A4A4A">
+                <tspan x="514" y="1006">None</tspan>
+            </text>
+            <text id="-----------------Jul" sketch:type="MSTextLayer" font-family="Futura" font-size="34" font-weight="420" fill="#4A4A4A">
+                <tspan x="33" y="897"> 					           </tspan>
+                <tspan x="288.414062" y="897" font-size="48">July</tspan>
+                <tspan x="372.71875" y="897">             </tspan>
+                <tspan x="509.117188" y="897" font-family="Futura (Light)" font-weight="normal">August</tspan>
+            </text>
+            <text id="Use-in---3---days" sketch:type="MSTextLayer" font-family="Futura (Light)" font-size="34" font-weight="normal" fill="#4A4A4A">
+                <tspan x="188" y="638">Use in  </tspan>
+                <tspan x="296.765137" y="638" text-decoration="underline"> </tspan>
+                <tspan x="307.307129" y="638" font-family="Futura" font-size="48" font-weight="420" text-decoration="underline">3 </tspan>
+                <tspan x="351.744629" y="638">  days</tspan>
+            </text>
+            <text id="Cancel" sketch:type="MSTextLayer" font-family="Futura" font-size="34" font-weight="420" fill="#4A4A4A">
+                <tspan x="107" y="1103">Cancel</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

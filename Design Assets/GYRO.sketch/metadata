@@ -13,9 +13,10 @@
 		<string>HelveticaNeue</string>
 		<string>HelveticaNeue-Light</string>
 		<string>Futura-Medium</string>
+		<string>FuturaLight</string>
 	</array>
 	<key>length</key>
-	<integer>1736187</integer>
+	<integer>6131351</integer>
 	<key>version</key>
 	<integer>37</integer>
 </dict>
