@@ -37,6 +37,10 @@ if (Meteor.isClient){
         'click #facebook_login': function (e, tmpl){
             e.preventDefault();
             Meteor.loginWithFacebook(loginfunc);
+        },
+        'click #twitter_login': function (e, tmpl){
+            e.preventDefault();
+            Meteor.loginWithTwitter(loginfunc);
         }
     });
 }

@@ -1,6 +1,6 @@
 <template name="LoginPage">
 <div class="loginpage container">
-    <div class="row">
+    <div class="row logoholder">
         <div class="col-xs-8 col-xs-offset-2">
             <img src="img/gyro-logo-light.png" class="img-responsive" />
         </div>
@@ -25,17 +25,18 @@
             <button type="button" class="loginbutton btn btn-default createaccountbutton">Create Account</button>
         </div>
     </div>
-
     <div class="row loginbuttons">
         <div class="col-xs-4 text-center">
-            <a href="#" class="facebookloginarea" id="facebook_login" >
+            <a href="#" id="facebook_login" >
                 <img src="img/fblogin.png" class="img-responsive" alt="log in with facebook" />
                 facebook
             </a>
         </div>
         <div class="col-xs-4 text-center">
-            <img src="img/twitterlogin.png" class="img-responsive" alt="log in with twitter" />
-            twitter
+            <a href="#" id="twitter_login" >
+                <img src="img/twitterlogin.png" class="img-responsive" alt="log in with twitter" />
+                twitter
+            </a>
         </div>
         <div class="col-xs-4 text-center ">
             <a href="#" class="emailbutton">
