@@ -1,0 +1,125 @@
+body {
+    // make room for navbars
+    padding-top: 60px;
+}
+
+.navbar {
+    .logo {
+        width: 146px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    &.navbar-fixed-bottom {
+        min-height: 0;
+        height: 25px;
+    }
+}
+
+.thing {
+    width: 85%;
+    margin: 10px auto;
+}
+.chart {
+    width: 250px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.chart .label {
+    position: absolute;
+    height: 130px;
+    top: 50%;
+    margin-top: -65px; /* half whatever the chart size is */
+    width: 100%;
+    text-align: center;
+}
+.chart .label .num {
+    font-size: 100px;
+    margin-bottom: -10px;
+}
+.chart .label .timescale {
+    font-size: 14px;
+}
+
+.staticchart {
+    width: 110px;
+    margin: 0 auto;
+    position:relative;
+    height: 110px;
+}
+
+.staticchart
+{
+    border-radius:55px;
+    box-shadow: 2px 3px 10px #696969;
+    -moz-box-shadow: 2px 3px 10px #696969;
+    -webkit-box-shadow: 2px 3px 10px #696969;
+
+}
+
+.staticchart:hover
+{
+    cursor: pointer;
+}
+
+.staticchart .label {
+    position: absolute;
+    top: 50%;
+    margin-top: -33px;
+    width:100%;
+    text-align:center;
+}
+
+.staticchart .label .num {
+    font-size: 45px;
+    margin-bottom: -7px;
+}
+.staticchart .label .timescale {
+    font-size: 12px;
+}
+
+div.itemname {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    min-height: 40px;
+}
+
+.portfolioContainer
+{
+    padding-top:5px;
+    /*min-height:500px;*/
+    /*padding:15px;	*/
+}
+.isotope-item {
+    width: 145px;
+    float:left;
+}
+
+#saveButton {
+    width: 100%;
+}
+
+#deleteButton, #resetButton {
+    width: 45%;
+    display: block;
+    float:left;
+    margin: 0 5px;
+}
+
+#popupDelete
+{
+    background-color: "#CCC";
+    top:-200px;
+    width:95%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+#popupDeleteButton, #popupCancelButton
+{
+    width:280px;
+}
