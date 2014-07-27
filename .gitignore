@@ -1,6 +1,10 @@
 *.swp
 
 
-*.lock
+packages
 
 smart.json
+
+smart.lock
+
+.meteor
