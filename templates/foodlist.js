@@ -18,7 +18,7 @@ if (Meteor.isClient){
 
             // convert from ms to days
             daysleft = daysleft / 1000 / 60 / 60 / 24;
-            var scalefactor = 7.0;
+            var scalefactor = 14.0;
         } else {
             // TODO: month, year etc
             var scalefactor = 30.0;
@@ -41,6 +41,15 @@ if (Meteor.isClient){
         return result;
     }
 
+    var hundredScale = function(num, divisions) {
+        // scale the label boundaries automatically... with MATH
+        var scalefactor = 100 / divisions;
+        var currentscaled = num * scalefactor;
+        // var max = currentscaled + scalefactor;
+        var min = currentscaled - scalefactor;
+        return {'min': min, 'max': currentscaled}
+    }
+
     var donutColor = function(val){
         // bar color changes
         var yearcolor = "green";
@@ -49,27 +58,14 @@ if (Meteor.isClient){
         var fivedaycolor = "yellow";
         var twodaycolor = "red";
 
-        switch ($('.chart').data('timescale')) {
-            case 'week':
-                // 2/7 of 100 = 28ish
-                if (val < hundredScale(3,7).min) {
-                    return twodaycolor;
-                } else if (val > hundredScale(5,7).max) {
-                    return weekcolor;
-                } else {
-                    return fivedaycolor;
-                }
-                break;
-            case 'month':
-                return monthcolor;
-                break;
-            case 'year':
-                return yearcolor;
-                break;
-            default:
-                return weekcolor;
-                break;
-        }
+        // 2/7 of 100 = 28ish
+        if (val < hundredScale(3,14).min) {
+            return twodaycolor;
+        } else if (val > hundredScale(5,14).max) {
+            return weekcolor;
+        } else {
+            return fivedaycolor;
+        }    
     };
 
     var staticoptions = {
