@@ -1,9 +1,18 @@
-@import url(http://fonts.googleapis.com/css?family=Didact+Gothic);
+@font-face {
+    font-family: 'sofia_pro_lightregular';
+    src: url('fonts/SofiaProLight-webfont.eot');
+    src: url('fonts/SofiaProLight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/SofiaProLight-webfont.woff') format('woff'),
+         url('fonts/SofiaProLight-webfont.ttf') format('truetype'),
+         url('fonts/SofiaProLight-webfont.svg#sofia_pro_lightregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
     // make room for navbars
-    padding-top: 45px;
-    font-family: 'Didact Gothic', sans-serif;
+    padding-top: 60px;
+    font-family: 'sofia_pro_lightregular', sans-serif;
 }
 
 .navbar {
@@ -17,6 +26,10 @@ body {
         min-height: 0;
         height: 25px;
     }
+}
+
+.logoholder {
+    margin-top: -30px;
 }
 
 .emailform {
