@@ -98,118 +98,6 @@ function saveItem(id){
 	});
 }
 
-function getAll(){
-	$.ajax({
-		url: "ajax/getall/",
-		method: "GET",
-		dataType: "json",
-		success: function(data)
-		{
-			//console.log(data);
-			$('#pantryList').isotope('destroy');
-			$('#pantryList').html("");
-			$('#pantryList').isotope({
-				filter: '*',
-				animationOptions: {
-					duration: 750,
-					easing: 'linear',
-					queue: false
-				},
-				getSortData: {
-					remaining: function($el){
-						var remaining = parseInt($el.find('.num').text());
-						var scale = $el.find('.staticchart').data('timescale');
-						if (scale == 'year'){
-							remaining = remaining * 30;
-						}
-						return remaining;
-					}
-
-				},
-				sortBy: 'remaining'
-			});
-
-			$.each(data,function(i,value) {
-				if (value.remaining == 0){
-					var timeunits = 'tap to reset'
-				} else {
-					if (value.timescale == 'year') {
-						var timeunits = 'months';
-					} else {
-						var timeunits = 'days';
-					}
-				}
-
-				var classes = "isotope-item";
-				if (value.remaining == 0)
-					classes +=" expired";
-				else
-					classes+=" activeTimer";
-				if(value.timescale != "year")
-				{
-
-					if(value.remaining <= 7 && value.remaining != 0)
-					classes +=" soon";
-					if(value.remaining <30 && value.remaining != 0)
-						classes +=" month";
-					else if(value.remaining != 0)
-						classes +=" later";
-				}
-				else
-				{
-					classes +=" later";
-				}
-
-				var $newItems = $('<div class="'+classes+'" id="item'+value.id+'" data-timerid="'+value.id+'" style="position: absolute; left: 0px; top: 0px;" ><div class="staticchart" data-percent="'+value.percentage+'"><div class="label"><div class="num">'+value.remaining+'</div><div class="timescale">'+timeunits+'</div></div></div><div class="itemname">'+value.name+'</div></div>');
-
-				$newItems.children('.staticchart').data({'timescale': value.timescale});
-				$newItems.click(function (e) {
-					if (value.remaining == 0){
-						resetItem(value.id);
-					} else {
-						openItem(value.id);
-					}
-
-				})
-				$('#pantryList').isotope( 'insert', $newItems );
-
-			});
-
-
-			// small charts for list view
-			var staticoptions2 = {
-				'lineWidth': 5,
-				'size': 110,
-				'scaleColor': false,
-				'animate': false,
-				'lineCap': 'butt',
-				'barColor': donutColor,
-				'trackColor': '#C9C9C9'
-				};
-			var staticoptions_expired = {
-				'lineWidth': 5,
-				'size': 110,
-				'scaleColor': false,
-				'animate': false,
-				'lineCap': 'butt',
-				'barColor': donutColor,
-				'trackColor': '#FF3333'
-				};
-				//$('#pantryList').append($newItems);
-			// expired items a differnet color
-			$('.isotope-item:not(.expired) .staticchart').easyPieChart(staticoptions2);
-			// whatever's left is expired
-			$('.staticchart').easyPieChart(staticoptions_expired);
-
-
-		}
-
-	});
-
-	// reset editing dialog also
-
-}
-
 function openItem(id){
 	$.ajax({
 		url: "ajax/getone/",
@@ -289,42 +177,6 @@ function openItem(id){
 
 }
 
-function closeAndReset(selector) {
-	try {
-		$(selector).dialog('close');
-		getAll();
-	} catch (err) {
-		getAll();
-	}
-
-}
-
-function deleteItem(id){
-	$.ajax({
-		url: 'ajax/delete/',
-		data: {'id': id},
-		method: 'POST',
-		success: function(data)
-		{
-			closeAndReset('#editview');
-		}
-	});
-
-}
-
-function resetItem(id){
-	$.ajax({
-		url: 'ajax/reset/',
-		data: {'id': id},
-		method: 'POST',
-		success: function(data)
-		{
-			console.log(data);
-			closeAndReset('#editview');
-			getAll();
-		}
-	});
-}
 
 function showAddNew(){
 	// reset edit settings and show
@@ -456,28 +308,13 @@ $(window).on('pageshow', function() {
     }
 
     var $container = $('.portfolioContainer');
-    $container.isotope({
-        filter: '*',
-        animationOptions: {
-            duration: 750,
-            easing: 'linear',
-            queue: false
-        }
-    });
 
     $('.portfolioFilter button').click(function(){
         $('.portfolioFilter .active').removeClass('active');
         $(this).addClass('active');
 
         var selector = $(this).attr('data-filter');
-        $container.isotope({
-            filter: selector,
-            animationOptions: {
-                duration: 750,
-                easing: 'linear',
-                queue: false
-            }
-         });
+
          return false;
     });
 
@@ -487,7 +324,6 @@ $(window).on('pageshow', function() {
 		showAddNew();
 	});
 
-	getAll();
 	// $.mobile.loadPage('#editview', {reloadPage: true});
 
 });
@@ -568,7 +404,7 @@ function filterTimers(cname)
 					}
 
 				})
-				$('#pantryList').isotope( 'insert', $newItems );
+				// $('#pantryList').isotope( 'insert', $newItems );
 
 				if(cname == "all")
 				{
@@ -579,7 +415,7 @@ function filterTimers(cname)
 					$(".isotope-item").hide();
 					var x = "."+cname;
 					$(x).show();
-					$("#pantryList").isotope( 'remove', $(".isotope-item:hidden"), '')
+					// $("#pantryList").isotope( 'remove', $(".isotope-item:hidden"), '')
 				}
 
 			});
