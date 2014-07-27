@@ -4,6 +4,15 @@ if (Meteor.isClient){
     }
 
     Template.FoodItem.events({
+        'click .removeitem': function(e, tmpl){
+            e.preventDefault();
+            var id = tmpl.data._id;
+            FoodItems.update({_id: id},
+                {$set: {
+                           status:"inactive"
+                       }
+                });
+        },
         'click .expired': function(e, tmpl){
             var id = tmpl.data._id;
             var itemname = tmpl.data.name;
