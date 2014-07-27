@@ -8,6 +8,11 @@ var loginfunc = function(e){
 }
 if (Meteor.isClient){
     Template.LoginPage.events({
+        'click .emailbutton': function(e, tmpl){
+            e.preventDefault();
+            $(".emailform").fadeToggle();
+        },
+
         'click .loginbutton': function(e, tmpl){
             e.preventDefault();
             var email = tmpl.find("#input_email").value;

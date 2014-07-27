@@ -1,15 +1,48 @@
 <template name="LoginPage">
-<div class="loginpage">
-    <form>
-        Email: <input type="text" id="input_email"><br>
-        Password: <input type="password" id="input_password"><br>
-    </form>
-    <div class="errors" id="loginerrorarea">
+<div class="loginpage container">
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2">
+            <img src="img/gyro-logo-light.png" class="img-responsive" />
+        </div>
     </div>
-    <div class="loginoptions">
-        <div class="loginbutton">Login</div>
-        <div class="createaccountbutton">Create Account</div>
+
+
+    <div class="col-xs-12 emailform">
+        <form role="form">
+            <div class="form-group">
+                <label for="input_email">Email address:</label>
+                <input type="email" class="form-control" id="input_email">
+            </div>
+            <div class="form-group">
+                <label for="input_password">Password: </label>
+                <input type="password" class="form-control" id="input_password">
+            </div>
+        </form>
+        <div class="errors" id="loginerrorarea">
+        </div>
+        <div class="loginoptions">
+            <button type="button" class="loginbutton btn btn-primary">Login</button>
+            <button type="button" class="loginbutton btn btn-default createaccountbutton">Create Account</button>
+        </div>
     </div>
-    <div id="facebook_login" class="facebookloginarea">Or login with facebook</div>
+
+    <div class="row loginbuttons">
+        <div class="col-xs-4 text-center">
+            <a href="#" class="facebookloginarea" id="facebook_login" >
+                <img src="img/fblogin.png" class="img-responsive" alt="log in with facebook" />
+                facebook
+            </a>
+        </div>
+        <div class="col-xs-4 text-center">
+            <img src="img/twitterlogin.png" class="img-responsive" alt="log in with twitter" />
+            twitter
+        </div>
+        <div class="col-xs-4 text-center ">
+            <a href="#" class="emailbutton">
+                <img src="img/emaillogin.png" class="img-responsive" alt="log in with email address" />
+                email
+            </a>
+        </div>
+    </div>
 </div>
 </template>
