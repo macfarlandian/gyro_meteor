@@ -133,8 +133,13 @@ if (Meteor.isClient){
                "July", "August", "September", "October", "November",
                "December"]);
 
+
     Template.CreateTimer.rendered = function(){
         // do some d3 shit
+
+        var daybar = d3.scale.linear()
+            .domain([0,14])
+            .range([0, d3.select(".daycount").property("offsetWidth")]);
 
         // create dates
         d3.select(".row.dates").selectAll("div")
@@ -149,6 +154,7 @@ if (Meteor.isClient){
                     return value;
                 })
                 .text(function(d){ return dayrange.invert(d).getDate() });
+
         // create days of week
         d3.select(".row.days").selectAll("div")
             .data(d3.range(1,15)).enter()
@@ -174,10 +180,21 @@ if (Meteor.isClient){
 
         var leftedge = scrollers.select("div").property("offsetLeft") - 20;
 
+        // initialize the num text and the bar
         d3.select(".row.daycount .num")
             .text(function(){
                 return scrollers.select(".active").datum();
             });
+
+        var num = d3.select(".daycount .num").text();
+
+        d3.select(".row.daycount").append("div")
+            .datum(+num)
+                .classed("bar", true)
+                .style("width", function(d){
+                    return daybar(d) + "px";
+                });
+
 
         scrollers.on("scroll", function(d,i){
             // sync scrolling
@@ -198,6 +215,15 @@ if (Meteor.isClient){
                 .text(function(){
                     return scrollers.select(".active").datum();
                 });
+
+            d3.select(".bar")
+                .datum(function(){
+                    return scrollers.select(".active").datum();
+                })
+                    .transition()
+                    .style("width", function(d){
+                        return daybar(d) + "px";
+                    });
 
             // update the month if necessary
             var activemonth = dayrange.invert(scrollers.select(".active")
