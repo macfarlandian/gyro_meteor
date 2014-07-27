@@ -11,19 +11,30 @@
 
 body {
     // make room for navbars
-    padding-top: 60px;
+    padding-top: 75px;
     font-family: 'sofia_pro_lightregular', sans-serif;
     background: url('img/strange_bullseyes.png');
 }
 
 .navbar {
-    &.addnew {
-        min-height: 0;
-        height: 25px;
-    }
-    &.navbar-default {
+    &.topbar {
+        position:fixed;
+        top:0; left:0; right:0;
+        height: 50px;
         border: none;
         background: none;
+        &.bottombar {
+            top: auto;
+            bottom: 0;
+        }
+
+        .addbutton {
+            padding-top: 10px;
+            color: #333;
+        }
+        .btn-group {
+            margin-right: 15%;
+        }
         .bgimage {
             position:fixed;
             width: 100%;
@@ -37,6 +48,7 @@ body {
             filter: blur(5px);
         }
     }
+
     .container {
         position: relative;
         .logo {
@@ -53,6 +65,7 @@ body {
             left: 0;
             right: 0;
             pointer-events: none;
+            margin-top: 10px;
         }
     }
 
