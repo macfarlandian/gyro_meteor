@@ -1,19 +1,37 @@
+var loginfunc = function(e){
+    console.log("testing login");
+    if (typeof(e) === 'undefined'){
+        Router.go('/');
+    } else {
+        alert("Login didn't work");
+    }
+}
 if (Meteor.isClient){
     Template.LoginPage.events({
-        'submit form': function(e, tmpl){
+        'click .loginbutton': function(e, tmpl){
             e.preventDefault();
-            email = tmpl.find("#input_email").value;
-            password = tmpl.find("#input_password").value;
+            var email = tmpl.find("#input_email").value;
+            var password = tmpl.find("#input_password").value;
 
-            if(!Meteor.userId){
-                Meteor.loginWithPassword(email,password, function(e){
-                    if (typeof(e) === 'undefined'){
-                        Router.go('/');
-                    } else {
-                        alert("Login didn't work")
-                    }
-                });
+            if(!Meteor.userId()){
+                Meteor.loginWithPassword(email, password, loginfunc);
             }
+        },
+        'click .createaccountbutton': function(e, tmpl){
+           var email = tmpl.find("#input_email").value;
+           var password = tmpl.find("#input_password").value;
+           Accounts.createUser({email: email, password: password},
+               function (e){
+                   if(e){
+                       console.log('account creation failed');
+                   } else{
+                       Meteor.loginWithPassword(email, password, loginfunc);
+                   }
+               });
+        },
+        'click #facebook_login': function (e, tmpl){
+            e.preventDefault();
+            Meteor.loginWithFacebook(loginfunc);
         }
     });
 }
