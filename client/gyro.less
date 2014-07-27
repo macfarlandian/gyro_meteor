@@ -13,12 +13,29 @@ body {
     // make room for navbars
     padding-top: 60px;
     font-family: 'sofia_pro_lightregular', sans-serif;
+    background: url('img/strange_bullseyes.png');
 }
 
 .navbar {
     &.addnew {
         min-height: 0;
         height: 25px;
+    }
+    &.navbar-default {
+        border: none;
+        background: none;
+        .bgimage {
+            position:fixed;
+            width: 100%;
+            height: 50px;
+            z-index: 0;
+            background: url('img/strange_bullseyes.png');
+            -webkit-filter: blur(5px);
+            -moz-filter: blur(5px);
+            -o-filter: blur(5px);
+            -ms-filter: blur(5px);
+            filter: blur(5px);
+        }
     }
     .container {
         position: relative;
@@ -60,15 +77,20 @@ body {
     }
 }
 
+.form-control {
+    font-size: 20px;
+}
+
 .newtimer {
     font-size: 20px;
     .row {
-        padding: 5px 0;
+        padding: 12px 0;
     }
     .reminders {
         background-color: #5ed1ec;
     }
     .days, .dates {
+        background-color: #fff;
         overflow-x: auto;
         white-space: nowrap;
         div {
@@ -82,8 +104,7 @@ body {
             }
         }
         .active {
-            font-size: 25px;
-            line-height: 20px;
+            font-size: 30px;
         }
     }
     .daycount, .month {
@@ -96,13 +117,16 @@ body {
             line-height: 20px;
         }
         div.bar {
-            height: 38px;
+            height: 52px;
             background-color: #8becde;
             position: absolute;
             z-index:1;
             left: 0;
             top: 0;
         }
+    }
+    .month {
+        // background-color: #5ed1ec;
     }
 }
 

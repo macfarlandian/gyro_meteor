@@ -149,7 +149,7 @@ if (Meteor.isClient){
                 .attr("class", function(d,i){
                     var value = "col-xs-2";
                     if (i == 0) {
-                        value = value + " col-xs-offset-4 active";
+                        value = value + " col-xs-offset-5 active";
                     }
                     return value;
                 })
@@ -162,7 +162,7 @@ if (Meteor.isClient){
                 .attr("class", function(d,i){
                     var value = "col-xs-2";
                     if (i == 0) {
-                        value = value + " col-xs-offset-4 active";
+                        value = value + " col-xs-offset-5 active";
                     }
                     return value;
                 })
