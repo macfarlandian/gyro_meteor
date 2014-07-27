@@ -2,7 +2,7 @@
 {{>topBar}}
 <div class="navbar navbar-default navbar-fixed-bottom addnew">
 	<div class="container">
-		<a href="/new">Add new timer</a>
+		<a href="{{ pathFor 'CreateTimer' }}">Add new timer</a>
 	</div>
 
 </div>
@@ -40,8 +40,8 @@
 <!-- title bar -->
 <div class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
-		<button class="btn btn-default navbar-btn navbar-left">&larr; back</button>
 		<div class="titlebar-text h3">new timer</div>
+		<a class="btn btn-default navbar-btn navbar-left" href="{{ pathFor 'FoodList' }}">&larr; back</a>
 	</div>
 </div>
 
@@ -49,7 +49,7 @@
 <div class="navbar navbar-default navbar-fixed-bottom">
 	<div class="container">
 		<button class="btn btn-default btn-lg col-xs-6 navbar-btn">cancel</button>
-		<button class="btn btn-primary btn-lg col-xs-6 navbar-btn">save</button>
+		<button class="btn btn-primary btn-lg col-xs-6 navbar-btn save">save</button>
 	</div>
 </div>
 
@@ -57,10 +57,25 @@
 <div class="container newtimer">
 	<div class="row">
 		<div class="col-xs-12">
+			<input class="form-control" type="text" id="timer_name" value="" placeholder="name of food item">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
 			capture your food
 		</div>
 	</div>
-	<div class="row daycount text-center">Use in <span class="num"></span> days</div>
+	<div class="row daycount">
+		<div class="col-xs-4 text-right">
+			Use in
+		</div>
+		<div class="col-xs-1 text-center">
+			<span class="num"></span>
+		</div>
+		<div class="col-xs-2 text-left">
+			days
+		</div>
+	</div>
 	<div class="row days"></div>
 	<div class="row dates"></div>
 	<div class="row month text-center"></div>

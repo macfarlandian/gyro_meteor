@@ -88,27 +88,28 @@ if (Meteor.isClient){
         $('.staticchart').easyPieChart(staticoptions);
     }
 
+    // 14 day range
+    var today = new Date();
+    var fortnight = new Date();
+    fortnight.setDate(today.getDate() + 14);
+
+    var weekday = d3.scale.ordinal()
+        .domain([0,1,2,3,4,5,6])
+        .range(["Su", "M", "Tu", "W", "Th",
+                "F", "Sa"]);
+
+    var dayrange = d3.time.scale()
+        .domain([today, fortnight])
+        .range([1,14]);
+
+    var months = d3.scale.ordinal()
+        .domain(d3.range(12))
+        .range(["January", "February", "March", "April", "May", "June",
+               "July", "August", "September", "October", "November",
+               "December"]);
+
     Template.CreateTimer.rendered = function(){
         // do some d3 shit
-        // 14 day range
-        var today = new Date();
-        var fortnight = new Date();
-        fortnight.setDate(today.getDate() + 14);
-
-        var weekday = d3.scale.ordinal()
-            .domain([0,1,2,3,4,5,6])
-            .range(["Su", "M", "Tu", "W", "Th",
-                    "F", "Sa"]);
-
-        var dayrange = d3.time.scale()
-            .domain([today, fortnight])
-            .range([1,14]);
-
-        var months = d3.scale.ordinal()
-            .domain(d3.range(12))
-            .range(["January", "February", "March", "April", "May", "June",
-                   "July", "August", "September", "October", "November",
-                   "December"]);
 
         // create dates
         d3.select(".row.dates").selectAll("div")
@@ -116,9 +117,9 @@ if (Meteor.isClient){
             .enter()
             .append("div")
                 .attr("class", function(d,i){
-                    var value = "col-xs-1";
+                    var value = "col-xs-2";
                     if (i == 0) {
-                        value = value + " col-xs-offset-3 active";
+                        value = value + " col-xs-offset-4 active";
                     }
                     return value;
                 })
@@ -128,9 +129,9 @@ if (Meteor.isClient){
             .data(d3.range(1,15)).enter()
             .append("div")
                 .attr("class", function(d,i){
-                    var value = "col-xs-1";
+                    var value = "col-xs-2";
                     if (i == 0) {
-                        value = value + " col-xs-offset-3 active";
+                        value = value + " col-xs-offset-4 active";
                     }
                     return value;
                 })
@@ -146,7 +147,7 @@ if (Meteor.isClient){
 
         var scrollers = d3.selectAll(".row.days, .row.dates");
 
-        var leftedge = scrollers.select(".col-xs-1").property("offsetLeft");
+        var leftedge = scrollers.select("div").property("offsetLeft") - 20;
 
         d3.select(".row.daycount .num")
             .text(function(){
@@ -157,10 +158,10 @@ if (Meteor.isClient){
             // sync scrolling
             scrollers.property("scrollLeft", this.scrollLeft);
             // change active column
-            var colwidth = d3.select(this).select(".col-xs-1").property("offsetWidth");
-            scrollers.selectAll(".col-xs-1")
+            var colwidth = d3.select(this).select("div").property("offsetWidth") - 15;
+            scrollers.selectAll("div")
                 .classed("active", function(){
-                    if (0 <= this.offsetLeft - scrollers.property("scrollLeft") - leftedge
+                    if (-15 <= this.offsetLeft - scrollers.property("scrollLeft") - leftedge
                         && this.offsetLeft - scrollers.property("scrollLeft") - leftedge < colwidth) {
                         return true;
                     } else {
@@ -183,4 +184,28 @@ if (Meteor.isClient){
             }
         });
     }
+
+    Template.CreateTimer.events({
+        'click .btn.save': function(e){
+            e.preventDefault();
+            // gather data
+            var itemname = d3.select("#timer_name").property("value");
+            var shelflife = d3.select(".daycount .num").text();
+            var enddate = dayrange.invert(d3.select(".days .active").datum());
+
+            // save to db
+            FoodItems.insert({
+                name: itemname,
+                user_id: Meteor.userId(),
+                startdate: Date.now(),
+                shelflife: +shelflife,
+                enddate: enddate.getTime(),
+                status: "active",
+                timescale: "week"
+            });
+
+            // return to list
+            Router.go('FoodList');
+        }
+    });
 }
