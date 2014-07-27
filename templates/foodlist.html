@@ -35,11 +35,18 @@
 
 		    <div class="portfolioContainer" id="pantryList">
 		    	<!-- filled in via ajax -->
-                <div class="FoodList">
-                    {{# each food_items }}
-                        {{> FoodItem }}
-                    {{/ each}}
-                </div>
+                {{# each food_items }}
+                    <div class="{{ classes }}" id="{{ _id }}" data-timerid="{{ _id }}"
+						style="position: absolute; left: 0px; top: 0px;" >
+						<div class="staticchart" data-percent="{{ values.percentage }}">
+							<div class="label">
+								<div class="num">{{ values.remaining }}</div>
+								<div class="timescale">{{ values.timeunits }}</div>
+							</div>
+						</div>
+						<div class="itemname">{{ name }}</div>
+					</div>
+                {{/ each}}
 		    </div>
 		</div>
 

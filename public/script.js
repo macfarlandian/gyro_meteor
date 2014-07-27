@@ -52,7 +52,7 @@ function updateLabel(val) {
 	case 'year':
 		var divisions = 12;
 		break;
-	default: 
+	default:
 		// if unset
 		$('.chart').data('timescale', "week");
 		var divisions = 7;
@@ -63,7 +63,7 @@ function updateLabel(val) {
 	min = scaled.min;
 	var dec = currentnum - 1;
 	var inc = currentnum + 1;
-	
+
 	if (val < min) { $('.chart .num').text(dec)}
 	else if (val > max) {$('.chart .num').text(inc)}
 	// console.log(scaled);
@@ -74,20 +74,20 @@ function saveItem(id){
 	var time = $('#itemTime').html();
 	var scale = $('input:radio[name=timescale]:checked').val();
 	var slider = $('#slider-1').val();
-		
+
 	var data = {
 		'name': name ,
 		'timescale': scale,
 		'shelflife': time,
 		'status': "active"
 	};
-	
+
 	if (id !='0'){
 		data['id'] = parseInt(id);
 	} else {
 		data['id'] = 'new';
 	}
-		
+
 	$.ajax({
 		url: "ajax/update/",
 		method: 'POST',
@@ -124,11 +124,11 @@ function getAll(){
 						}
 						return remaining;
 					}
-					
+
 				},
-				sortBy: 'remaining' 
+				sortBy: 'remaining'
 			});
-			
+
 			$.each(data,function(i,value) {
 				if (value.remaining == 0){
 					var timeunits = 'tap to reset'
@@ -139,7 +139,7 @@ function getAll(){
 						var timeunits = 'days';
 					}
 				}
-					
+
 				var classes = "isotope-item";
 				if (value.remaining == 0)
 					classes +=" expired";
@@ -147,7 +147,7 @@ function getAll(){
 					classes+=" activeTimer";
 				if(value.timescale != "year")
 				{
-					
+
 					if(value.remaining <= 7 && value.remaining != 0)
 					classes +=" soon";
 					if(value.remaining <30 && value.remaining != 0)
@@ -159,9 +159,9 @@ function getAll(){
 				{
 					classes +=" later";
 				}
-				
+
 				var $newItems = $('<div class="'+classes+'" id="item'+value.id+'" data-timerid="'+value.id+'" style="position: absolute; left: 0px; top: 0px;" ><div class="staticchart" data-percent="'+value.percentage+'"><div class="label"><div class="num">'+value.remaining+'</div><div class="timescale">'+timeunits+'</div></div></div><div class="itemname">'+value.name+'</div></div>');
-				
+
 				$newItems.children('.staticchart').data({'timescale': value.timescale});
 				$newItems.click(function (e) {
 					if (value.remaining == 0){
@@ -169,12 +169,12 @@ function getAll(){
 					} else {
 						openItem(value.id);
 					}
-					
+
 				})
 				$('#pantryList').isotope( 'insert', $newItems );
-				
+
 			});
-			
+
 
 			// small charts for list view
 			var staticoptions2 = {
@@ -200,14 +200,14 @@ function getAll(){
 			$('.isotope-item:not(.expired) .staticchart').easyPieChart(staticoptions2);
 			// whatever's left is expired
 			$('.staticchart').easyPieChart(staticoptions_expired);
-			
-			
+
+
 		}
-		
+
 	});
-	
+
 	// reset editing dialog also
-	
+
 }
 
 function openItem(id){
@@ -222,7 +222,7 @@ function openItem(id){
 		{
 			// load page into DOM
 			$.mobile.loadPage('#editview', {role: 'dialog'});
-			
+
 			// update it with values from response
 			$('#editview h1.ui-title').text('Edit "' + data.name + '"');
 			$('#editview #itemName').val(data.name);
@@ -249,7 +249,7 @@ function openItem(id){
 			$('#editview .num').text(data.remaining);
 			$('#editview #deleteButton').show();
 			$("#editview #itemId").val(data.id);
-			
+
 			// activate buttons
 			$('#editview #deleteButton').off('click');
 			$('#editview #deleteButton').click(function(){
@@ -257,7 +257,7 @@ function openItem(id){
 				//deleteItem(data.id);
 				$('#popupCancelButton').click(function(){
 					//console.log("Cancelling delete");
-					$("#popupDelete").popup("close");	
+					$("#popupDelete").popup("close");
 				});
 
 				$('#popupDeleteButton').off('click');
@@ -268,10 +268,10 @@ function openItem(id){
 				})
 
 				//$('#popupCancelButton').off('click');
-				
+
 
 			});
-			$('#editview #resetButton').show();	
+			$('#editview #resetButton').show();
 			$('#editview #resetButton').off('click');
 			$('#editview #resetButton').click(function(){
 				resetItem(data.id);
@@ -279,14 +279,14 @@ function openItem(id){
 			// activate save button
 			$('#editview #saveButton').off('click')
 			$('#editview #saveButton').click(function () {
-				saveItem(data.id); 
+				saveItem(data.id);
 			});
-			
+
 			// show dialog
 			$.mobile.changePage('#editview');
 		}
 	});
-	
+
 }
 
 function closeAndReset(selector) {
@@ -296,7 +296,7 @@ function closeAndReset(selector) {
 	} catch (err) {
 		getAll();
 	}
-	
+
 }
 
 function deleteItem(id){
@@ -304,12 +304,12 @@ function deleteItem(id){
 		url: 'ajax/delete/',
 		data: {'id': id},
 		method: 'POST',
-		success: function(data) 
+		success: function(data)
 		{
 			closeAndReset('#editview');
-		}	
+		}
 	});
-	
+
 }
 
 function resetItem(id){
@@ -317,12 +317,12 @@ function resetItem(id){
 		url: 'ajax/reset/',
 		data: {'id': id},
 		method: 'POST',
-		success: function(data) 
+		success: function(data)
 		{
 			console.log(data);
 			closeAndReset('#editview');
 			getAll();
-		}	
+		}
 	});
 }
 
@@ -342,11 +342,11 @@ function showAddNew(){
 	$('#editview input#slider-1').slider('refresh');
 	$('#editview #deleteButton, #editview #resetButton').hide();
 	$("#editview #itemId").val(0);
-	
+
 	// activate save button
 	$('#editview #saveButton').off('click');
 	$('#editview #saveButton').click(function () {
-		saveItem(0); 
+		saveItem(0);
 	});
 }
 
@@ -375,7 +375,7 @@ $(window).on('pageshow', function() {
 		$('.chart').data('easyPieChart').update(val);
 		updateLabel(val);
 	});
-	
+
 	// switch timescales
 	$('input[name=timescale]').change(function(e) {
 		// update jquery data on element
@@ -402,7 +402,7 @@ $(window).on('pageshow', function() {
 					// because it was converting funny with decimals and shit
 					currentlabel = currentlabel - 0.1;
 				}
-		
+
 				break;
 			case 'year':
 				// just start at 7 days
@@ -416,7 +416,7 @@ $(window).on('pageshow', function() {
 			break;
 		case 'month':
 			divisions = 30;
-			// upconverting from week: use label text as above	
+			// upconverting from week: use label text as above
 			if (oldscale == 'week') {
 				// because it was converting funny with decimals and shit
 				currentlabel = currentlabel - 0.1;
@@ -443,7 +443,7 @@ $(window).on('pageshow', function() {
 		// refresh slider display and chart
 		$('input#slider-1').slider('refresh');
 	});
-	
+
 	// small charts for list view
 	var staticoptions = {
 		'lineWidth': 15,
@@ -454,7 +454,7 @@ $(window).on('pageshow', function() {
 		'barColor': donutColor,
 		'trackColor': '#C9C9C9'
     }
-	
+
     var $container = $('.portfolioContainer');
     $container.isotope({
         filter: '*',
@@ -464,11 +464,11 @@ $(window).on('pageshow', function() {
             queue: false
         }
     });
- 
+
     $('.portfolioFilter button').click(function(){
         $('.portfolioFilter .active').removeClass('active');
         $(this).addClass('active');
- 
+
         var selector = $(this).attr('data-filter');
         $container.isotope({
             filter: selector,
@@ -479,23 +479,23 @@ $(window).on('pageshow', function() {
             }
          });
          return false;
-    }); 
-	
+    });
+
 	// activate add new button
 	$('#addnewbutton').off('click');
 	$('#addnewbutton').click(function () {
 		showAddNew();
 	});
-	
+
 	getAll();
 	// $.mobile.loadPage('#editview', {reloadPage: true});
-	
+
 });
 
 
 function filterTimers(cname)
 {
-	
+
 	$.ajax({
 		url: "ajax/getall/",
 		method: "GET",
@@ -521,11 +521,11 @@ function filterTimers(cname)
 						}
 						return remaining;
 					}
-					
+
 				},
-				sortBy: 'remaining' 
+				sortBy: 'remaining'
 			});
-			
+
 			$.each(data,function(i,value) {
 				if (value.remaining == 0){
 					var timeunits = 'tap to reset'
@@ -536,7 +536,7 @@ function filterTimers(cname)
 						var timeunits = 'days';
 					}
 				}
-					
+
 				var classes = "isotope-item";
 				if (value.remaining == 0)
 					classes +=" expired";
@@ -544,7 +544,7 @@ function filterTimers(cname)
 					classes+=" activeTimer";
 				if(value.timescale != "year")
 				{
-					
+
 					if(value.remaining <= 7 && value.remaining != 0)
 					classes +=" soon";
 					if(value.remaining <30 && value.remaining != 0)
@@ -556,9 +556,9 @@ function filterTimers(cname)
 				{
 					classes +=" later";
 				}
-				
+
 				var $newItems = $('<div class="'+classes+'" id="item'+value.id+'" data-timerid="'+value.id+'" style="position: absolute; left: 0px; top: 0px;" ><div class="staticchart" data-percent="'+value.percentage+'"><div class="label"><div class="num">'+value.remaining+'</div><div class="timescale">'+timeunits+'</div></div></div><div class="itemname">'+value.name+'</div></div>');
-				
+
 				$newItems.children('.staticchart').data({'timescale': value.timescale});
 				$newItems.click(function (e) {
 					if (value.remaining == 0){
@@ -566,7 +566,7 @@ function filterTimers(cname)
 					} else {
 						openItem(value.id);
 					}
-					
+
 				})
 				$('#pantryList').isotope( 'insert', $newItems );
 
@@ -581,9 +581,9 @@ function filterTimers(cname)
 					$(x).show();
 					$("#pantryList").isotope( 'remove', $(".isotope-item:hidden"), '')
 				}
-				
+
 			});
-			
+
 
 			// small charts for list view
 			var staticoptions2 = {
@@ -598,9 +598,9 @@ function filterTimers(cname)
 				//$('#pantryList').append($newItems);
 			$('.staticchart').easyPieChart(staticoptions2);
 		}
-		
+
 	});
-	
+
 	/*
 	getAll();
 	setTimeout(function() {
