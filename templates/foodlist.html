@@ -1,59 +1,23 @@
 <template name="FoodList">
-<div data-role="page" >
-	<div data-role="header" data-position="fixed">
-	    <img src="img/gyro-logo-light.png" style="height: 43px; width: 146px; display:block; margin: 0 auto;"/>
-		<!-- <h1></h1> -->
-	</div>
-	<div data-role="collapsible" data-mini="true" data-inset="false" style="margin: 0 15px;">
-		<h3>Filters</h3>
-		<div data-role="navbar" style="margin-bottom: 10px;">
-			<ul>
-				<li>
-					<a href="" class="ui-btn-active" onClick="filterTimers('all'); return false;">All</a>
-				</li>
-				<li>
-					<a href="" onClick="filterTimers('soon'); return false;">This Week</a>
-				</li>
-				<li>
-					<a href=""  onClick="filterTimers('month'); return false;">Month</a>
-				</li>
-				<li>
-					<a href=""  onClick="filterTimers('later'); return false;">Later</a>
-				</li>
-				<li>
-					<a href=""  onClick="filterTimers('activeTimer'); return false;">Active</a>
-				</li>
-				<li>
-					<a href=""  onClick="filterTimers('expired'); return false;">Expired</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div data-role="content" style="text-align:center;">
 
-		<div id="pantry">
-
-		    <div class="portfolioContainer" id="pantryList">
-		    	<!-- filled in via ajax -->
-                {{# each food_items }}
-                    <div class="{{ classes }}" id="{{ _id }}" data-timerid="{{ _id }}">
-						<div class="staticchart" data-percent="{{ values.percentage }}">
-							<div class="label">
-								<div class="num">{{ values.remaining }}</div>
-								<div class="timescale">{{ values.timeunits }}</div>
-							</div>
-						</div>
-						<div class="itemname">{{ name }}</div>
-					</div>
-                {{/ each}}
-		    </div>
-		</div>
-
-	</div>
-	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
-		<a id="addnewbutton" data-role="button" data-icon="plus"
-			href="#">New timer</a>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+		<img class="logo" src="img/gyro-logo-light.png"/>
 	</div>
 </div>
 
-</template>
+<div class="container">
+
+{{# each food_items }}
+	<div class="col-xs-6 {{ classes }}" id="{{ _id }}" data-timerid="{{ _id }}">
+		<div class="staticchart" data-percent="{{ values.percentage }}">
+			<div class="label">
+				<div class="num">{{ values.remaining }}</div>
+				<div class="timescale">{{ values.timeunits }}</div>
+			</div>
+		</div>
+		<div class="itemname">{{ name }}</div>
+	</div>
+{{/ each}}
+
+</div>
