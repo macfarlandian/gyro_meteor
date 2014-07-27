@@ -8,3 +8,5 @@ accounts-facebook
 accounts-ui
 accounts-password
 iron-router
+bootstrap
+less

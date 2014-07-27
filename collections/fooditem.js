@@ -1,8 +1,7 @@
 FoodItems = new Meteor.Collection("FoodItems");
 
 if (Meteor.isServer){
-    Meteor.startup(
-        Meteor.publish('FoodItems', function(){
+    Meteor.publish('FoodItems', function(){
         return FoodItems.find({user_id: this.userId});
     });
 
