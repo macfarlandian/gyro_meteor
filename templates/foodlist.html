@@ -11,7 +11,10 @@
 
 <template name="FoodItem">
 	<div class="col-xs-6" id="{{ _id }}" data-timerid="{{ _id }}">
-		<div class="staticchart {{ values.classes }}" data-percent="{{ values.percentage }}">
+    <div class="upperright removeitem">
+        <i class="fa fa-times-circle fa-2x"></i>
+    </div>
+		<div class="staticchart {{ values.classes }}" data-percent="{{ values.percentage }}" >
 			<div class="chartlabel">
 				<div class="num">{{ values.remaining }}</div>
 				<div class="timescale">{{ values.timeunits }}</div>
