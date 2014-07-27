@@ -87,10 +87,21 @@ body {
         }
     }
     .daycount, .month {
-        background-color: #8becde;
+        position: relative;
+        div {
+            z-index: 10;
+        }
         .num {
             font-size: 25px;
             line-height: 20px;
+        }
+        div.bar {
+            height: 38px;
+            background-color: #8becde;
+            position: absolute;
+            z-index:1;
+            left: 0;
+            top: 0;
         }
     }
 }
