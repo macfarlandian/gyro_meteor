@@ -1,6 +1,6 @@
 if (Meteor.isClient){
     Template.FoodList.food_items = function(){
-        return FoodItems.find({});
+        return FoodItems.find({}, {sort: ["enddate"]});
     }
 
     Template.FoodItem.values = function(){
