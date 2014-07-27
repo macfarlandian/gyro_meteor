@@ -1,10 +1,9 @@
 var loginfunc = function(e){
-    console.log("testing login");
-    if (typeof(e) === 'undefined'){
-        Router.go('/');
-    } else {
-        alert("Login didn't work");
-    }
+    // if (typeof(e) === 'undefined'){
+    //     Router.go('FoodList');
+    // } else {
+    //     alert("Login didn't work");
+    // }
 }
 if (Meteor.isClient){
     Template.LoginPage.events({
