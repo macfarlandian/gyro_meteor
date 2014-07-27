@@ -1,12 +1,5 @@
 <template name="FoodList">
 {{>topBar}}
-<div class="navbar navbar-default navbar-fixed-bottom addnew">
-	<div class="container">
-		<a href="{{ pathFor 'CreateTimer' }}">Add new timer</a>
-	</div>
-
-</div>
-
 <div class="container">
 
 {{# each food_items }}
@@ -18,7 +11,7 @@
 
 <template name="FoodItem">
 	<div class="col-xs-6" id="{{ _id }}" data-timerid="{{ _id }}">
-		<div class="staticchart" data-percent="{{ values.percentage }}">
+		<div class="staticchart {{ values.classes }}" data-percent="{{ values.percentage }}">
 			<div class="chartlabel">
 				<div class="num">{{ values.remaining }}</div>
 				<div class="timescale">{{ values.timeunits }}</div>
@@ -29,16 +22,27 @@
 </template>
 
 <template name="topBar">
-<div class="navbar navbar-default navbar-fixed-top">
+<div class="topbar navbar">
+	<div class="bgimage"></div>
 	<div class="container">
-		<img class="logo" src="img/gyro-logo-light.png"/>
+			<a href="{{ pathFor 'CreateTimer' }}" class="pull-right addbutton">
+				<i class="fa fa-plus-circle fa-2x"></i>
+			</a>
+			<div class="btn-group pull-right">
+				<button type="button" class="btn btn-default navbar-btn">grid view</button>
+				<button type="button" class="btn btn-default navbar-btn">list view</button>
+			</div>
+
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		</div>
 	</div>
 </div>
 </template>
 
 <template name="CreateTimer">
 <!-- title bar -->
-<div class="navbar navbar-default navbar-fixed-top">
+<div class="navbar topbar">
+	<div class="bgimage"></div>
 	<div class="container">
 		<div class="titlebar-text h3">new timer</div>
 		<a class="btn btn-default navbar-btn navbar-left" href="{{ pathFor 'FoodList' }}">&larr; back</a>
@@ -46,7 +50,8 @@
 </div>
 
 <!-- control bar -->
-<div class="navbar navbar-default navbar-fixed-bottom">
+<div class="navbar topbar bottombar">
+	<div class="bgimage"></div>
 	<div class="container">
 		<button class="btn btn-default btn-lg col-xs-6 navbar-btn cancel">cancel</button>
 		<button class="btn btn-primary btn-lg col-xs-6 navbar-btn save">save</button>
@@ -60,9 +65,9 @@
 			<input class="form-control" type="text" id="timer_name" value="" placeholder="name of food item">
 		</div>
 	</div>
-	
+
 	<div class="row daycount">
-		<div class="col-xs-4 text-right">
+		<div class="col-xs-4 text-right col-xs-offset-1">
 			Use in
 		</div>
 		<div class="col-xs-1 text-center">

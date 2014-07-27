@@ -4,7 +4,7 @@ if (Meteor.isClient){
     }
 
     Template.FoodItem.events({
-        'click': function(e, tmpl){
+        'click .expired': function(e, tmpl){
             var id = tmpl.data._id;
             var itemname = tmpl.data.name;
             var shelflife = tmpl.data.shelflife;
@@ -56,9 +56,11 @@ if (Meteor.isClient){
         result = {};
         result.percentage = daysleft / scalefactor * 100;
         result.remaining = daysleft;
+        result.classes = "";
 
         if (daysleft == 0) {
             result.timeunits = "tap to reset";
+            result.classes += " expired";
         } else {
             if (this.timescale == 'year') {
                 result.timeunits = 'months';
@@ -149,7 +151,7 @@ if (Meteor.isClient){
                 .attr("class", function(d,i){
                     var value = "col-xs-2";
                     if (i == 0) {
-                        value = value + " col-xs-offset-4 active";
+                        value = value + " col-xs-offset-5 active";
                     }
                     return value;
                 })
@@ -162,7 +164,7 @@ if (Meteor.isClient){
                 .attr("class", function(d,i){
                     var value = "col-xs-2";
                     if (i == 0) {
-                        value = value + " col-xs-offset-4 active";
+                        value = value + " col-xs-offset-5 active";
                     }
                     return value;
                 })
