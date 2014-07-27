@@ -40,7 +40,7 @@ if (Meteor.isClient){
             var enddate = new Date();
             // TODO: store enddate in the db
             enddate.setDate(startdate.getDate() + this.shelflife);
-            var daysleft = this.enddate - Date.now();
+            var daysleft = (this.startdate + parseInt(this.shelflife)*3600000*24) - Date.now();
             if (daysleft < 1) {
                 daysleft = 0;
             }
