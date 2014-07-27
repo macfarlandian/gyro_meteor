@@ -9,7 +9,7 @@ if (Meteor.isClient){
             var itemname = tmpl.data.name;
             var shelflife = tmpl.data.shelflife;
             var timescale = tmpl.data.timescale;
-            var enddate = tmpl.data.enddate + (parseInt(shelflife)*1000*60*60*24);
+            var enddate = Date.now() + (parseInt(shelflife)*1000*60*60*24);
 
             // save to db
             FoodItems.insert({
@@ -40,13 +40,13 @@ if (Meteor.isClient){
             var enddate = new Date();
             // TODO: store enddate in the db
             enddate.setDate(startdate.getDate() + this.shelflife);
-            var daysleft = enddate - Date.now();
+            var daysleft = this.enddate - Date.now();
             if (daysleft < 1) {
                 daysleft = 0;
             }
 
             // convert from ms to days
-            daysleft = Math.round(daysleft / 1000 / 60 / 60 / 24);
+            daysleft = Math.round(daysleft / (1000 * 60 * 60 * 24));
             var scalefactor = 14.0;
         } else {
             // TODO: month, year etc
