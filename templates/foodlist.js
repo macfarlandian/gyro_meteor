@@ -5,7 +5,7 @@ if (Meteor.isClient){
 
     Template.FoodList.classes = function(){
         var classes = "isotope-item";
-// TODO: the rest of this
+        // TODO: the rest of this
         return classes;
     }
 

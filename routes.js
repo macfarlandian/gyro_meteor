@@ -1,7 +1,7 @@
 if (Meteor.isClient){
     Router.map( function() {
         this.route('LoginPage', {path: '/login'});
-        this.route('FoodOverview', {path: '/'});
+        this.route('FoodList', {path: '/'});
     });
     Router.configure({
         onBeforeAction: function(pause){
