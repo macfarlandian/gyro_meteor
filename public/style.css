@@ -1,0 +1,168 @@
+body {
+    font-family: Arial;
+    
+}
+
+
+#screen
+{
+	width:480px;
+	height:640px;
+	background-color: Black;
+	margin: 0 auto;
+	float:none;	
+}
+
+.timer
+{
+	background-color:#036;
+	width:180px;
+	height:180px;
+	border-radius:90px;
+	margin:10px;
+	
+		
+}
+
+.portfolioFilter a {  
+	color:#666;
+	text-decoration:none;
+	min-width:640px;
+}
+
+.portfolioFilter a.current { 
+	font-weight:bold;
+}
+
+
+img {
+	margin:0px;
+}
+
+.isotope-item {
+	z-index: 2;
+}
+.isotope-hidden.isotope-item {
+	pointer-events: none;
+	z-index: 1;
+}
+.isotope,
+.isotope .isotope-item {
+  /* change duration value to whatever you like */
+
+	-webkit-transition-duration: 0.8s;
+	-moz-transition-duration: 0.8s;
+	transition-duration: 0.8s;
+}
+.isotope {
+	-webkit-transition-property: height, width;
+	-moz-transition-property: height, width;
+	transition-property: height, width;
+}
+.isotope .isotope-item {
+	-webkit-transition-property: -webkit-transform, opacity;
+	-moz-transition-property: -moz-transform, opacity;
+	transition-property: transform, opacity;
+}
+
+#pantryList
+{
+	min-height:450px;
+	max-height:4500px;
+	
+	overflow: auto;	
+}
+
+.small
+{
+	width:160px;	
+}
+
+.large
+{
+	width:240px;	
+}
+
+.fullscreen img
+{
+	position:absolute;	
+	width:480px;
+	z-index:10;
+	top:0px;
+	left:0px;
+}
+
+.info
+{
+	
+	width:100%;
+	background-color: #CCC;
+	color:#000;
+	font-size:16px;
+}
+
+.hidden
+{
+	display:none;	
+}
+
+.item img
+{
+	border-radius: 50px;	
+}
+
+#add
+{
+	margin: 0 auto;
+	float:none;		
+}
+
+.addItem
+{
+	background-color:silver; 
+	border-radius:150px; 
+	width:300px; 
+	height:300px;	
+}
+
+#add li
+{
+	display:inline-block;
+	margin-left: 50px;
+	padding:10px;
+	background-color:grey;
+}
+
+.header
+{
+	text-align:center;
+	margin:5px;	
+}
+
+.main
+{
+	min-height:500px;
+	max-height:500px;
+	padding:5px;
+	text-align:center;	
+	
+}
+	
+.form
+{
+	background-color:#CCC;
+	border-radius:5px;
+	padding:5px;
+	margin:10px;
+	
+}
+
+#pantry, #add, #donut
+{
+	text-align:center;	
+}
+
+@media screen and (max-width:480px)
+{
+
+}

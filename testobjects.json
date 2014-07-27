@@ -1,0 +1,26 @@
+/*test objects for gyro meteor*/
+
+{
+	name: "bananas",
+	startdate: "2014-07-24T14:48:00",
+	timescale: "week",
+	shelflife: 3,
+	status: "active"
+}
+
+{
+	name: "tomatoes",
+	startdate: "2014-07-25T14:48:00",
+	timescale: "week",
+	shelflife: 7,
+	status: "active"
+}
+
+{
+	name: "leftover cheesecake",
+	startdate: "2014-07-26T14:48:00",
+	timescale: "week",
+	shelflife: 2,
+	status: "active"
+}
+

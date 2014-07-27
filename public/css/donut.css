@@ -1,0 +1,57 @@
+@charset "UTF-8";
+/* CSS Document */
+@media screen {
+	.thing {
+		width: 85%;
+		margin: 30px auto;
+	}
+	.chart {
+		width: 250px;
+		margin: 0 auto;
+		position: relative;
+	}
+	
+	.chart .label {
+		position: absolute;
+		height: 130px;
+		top: 50%;
+		margin-top: -65px; /* half whatever the chart size is */
+		width: 100%;
+		text-align: center;
+	}
+	.chart .label .num {
+		font-size: 100px;
+		margin-bottom: -10px;
+	}
+	.chart .label .timescale {
+		font-size: 14px;
+	}
+	
+	.staticchart {
+		width: 110px;
+		margin: 0 auto;
+		position:relative;
+	}
+	
+	.staticchart .label {
+		position: absolute;
+		top: 50%;
+		margin-top: -33px;
+		width:100%;
+		text-align:center;
+	}
+	
+	.staticchart .label .num {
+		font-size: 45px;
+		margin-bottom: -7px;
+	}
+	.staticchart .label .timescale {
+		font-size: 10px;
+	}
+		
+	div.itemname {
+		text-align: center;
+		font-size: 13px;
+		margin-bottom: 15px;
+	}
+}
