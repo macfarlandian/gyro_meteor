@@ -7,3 +7,4 @@ standard-app-packages
 accounts-facebook
 accounts-ui
 accounts-password
+iron-router
